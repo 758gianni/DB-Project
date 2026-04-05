@@ -1,7 +1,9 @@
 <?php
 
-$DB_USER = $_ENV['DB_USER'];
-$DB_PASS = $_ENV['DB_PASS'];
+$env = parse_ini_file('.env');
+
+$DB_USER = $env['DB_USER'];
+$DB_PASS = $env['DB_PASS'];
 
 define('DB_HOST', '127.0.0.1');
 define('DB_USER', $DB_USER);

@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $status = 'error';
         $message = 'Please fill in both name and email.';
     } else {
-        $stmt = $conn->prepare('INSERT INTO suppliers (name, email_address) VALUES (?, ?)');
+        $stmt = $conn->prepare('INSERT INTO suppliers (name, email) VALUES (?, ?)');
 
         if (!$stmt) {
             $status = 'error';
@@ -78,13 +78,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
 
                 <?php if ($status === 'success'): ?>
-                    <div class="select-none mb-4 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
-                        <?php echo htmlspecialchars($message); ?>
-                    </div>
+                <div class="select-none mb-4 rounded-lg border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm text-emerald-700">
+                    <?php echo htmlspecialchars($message); ?>
+                </div>
                 <?php elseif ($status === 'error'): ?>
-                    <div class="select-none mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
-                        <?php echo htmlspecialchars($message); ?>
-                    </div>
+                <div class="select-none mb-4 rounded-lg border border-red-200 bg-red-50 px-4 py-3 text-sm text-red-700">
+                    <?php echo htmlspecialchars($message); ?>
+                </div>
                 <?php endif; ?>
 
                 <form id="add-supplier-form" action="" method="post" class="max-w-full overflow-x-auto mb-6 grid grid-cols-2 gap-4">
