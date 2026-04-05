@@ -1,0 +1,13 @@
+/* Chrome, Safari, Edge */
+input[type='search']::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+	appearance: none;
+	display: none;
+}
+
+/* Optional: remove other search decorations */
+input[type='search']::-webkit-search-decoration {
+	display: none;
+}
+
+/* .no-scrollbar */
